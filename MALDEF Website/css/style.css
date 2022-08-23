@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap');
+
+:root{--main-color: #03a9f4e3;   --padings: 90px;   --transition: 0.4s;}
+
+*{-webkit-box-sizing: border-box;   -moz-box-sizing: border-box;
+  box-sizing: border-box;   padding: 0;   margin: 0;}
+
+html{scroll-padding-top: 20px;   scroll-behavior: smooth;}
+html::-webkit-scrollbar{width: 12px;}
+html::-webkit-scrollbar-track{background: transparent;}
+html::-webkit-scrollbar-thumb{background: rgb(0 0 0 / 70%); 
+	                          border-radius: 24px;}
+
+body {font-family: "Cairo", sans-serif;}
+
+ul {list-style: none;   margin: 0;   padding: 0}
+a  {text-decoration: none;}
+
+.cont {padding-left: 15px;   padding-right: 15px;
+       margin-left: auto;   margin-right: auto;}
+
+/* small */
+@media (min-width:767px){.cont{width: 750px;} }
+/* medium */
+@media (min-width:992px){.cont{width: 970px;} }
+/* large */
+@media (min-width:1200px){.cont{width: 1170px;} }
+
+.heading{text-align: center;}
+
+.heading h2{font-weight: normal;        font-size: 40px;
+            position: relative;         margin-bottom: 45px;
+            text-transform: uppercase;}
+
+/*--------------------------- navbar ----------------------------------*/
+
+.navbar {position: absolute;   left: 0;   width: 100%;   z-index: 2;}
+
+.navbar .cont{display: flex;        justify-content: space-between;
+             align-items: center;   position: relative;    min-height: 97px;}
+
+.navbar .logo{color: #000;      height: 72px;    display: flex;
+              font-size: 30px;                   font-weight: bold;          
+              justify-content: center;           align-items: center;}
+
+.navbar .cont ul {flex: 1;                  display: flex;
+                  align-items: center;      justify-content: flex-end}
+
+.navbar .cont ul li a{padding: 40px 15px;   display: block;
+	                  position: relative;   z-index: 2;
+                      color: #000;          font-size: 18px;
+                      transition: var(--transition);}
+
+.navbar .cont ul li a:hover{color: var(--main-color);}
+
+/*---- js ----*/
+
+.navbar #mune{position: absolute;   right: 15px;   font-size: 30px;
+              cursor: pointer;      color: #000;}
+
+@media(min-width: 767px){.navbar #mune{display: none;}}
+
+@media(max-width: 768px){
+	.navbar .links{position: absolute;         padding-bottom: 50px;
+                   top: 75%;   left: 0;        width: 100%;            	
+                   display: flex;              align-items: center;
+                   justify-content: center;    flex-flow: column;
+                   background-color: rgb(0 0 0 / 85%);
+                   clip-path: circle(0% at 95.3% 8.5%)}
+	
+    .navbar .cont ul li a{color: #fff;   transition: var(--transition);}
+	
+    .navbar .links.active{clip-path: circle(140% at 95.3% 8.5%)}}
+
+/*---------------------------- header ------------------------------*/
+
+.landing{min-height: 100vh;   background-image: url(../photo/island.jpg);
+         background-color: #1f2021;      background-position: center;
+         background-size: cover;         position: relative}
+
+.landing .cont{min-height: 100vh;   display: flex;   align-items: center;}
+
+.landing .text{flex: 1;}
+
+@media (max-width: 991px){.landing .text {text-align: center;}}
+
+.landing .text h1{font-size: 40px;        margin: 0;   
+	              letter-spacing: -2px;   color: #000}
+
+@media (max-width: 767px){.landing .text h1 {font-size: 28px;}}
+
+.landing .text p{font-size: 23px;    line-height: 1.7;    color: #000;
+                 margin: 5px 0 0;    max-width: 500px;}
+
+@media (max-width: 991px){.landing .text p {margin: 10px auto;}}
+
+@media (max-width: 767px){.landing .text p {font-size: 14px;}}
+
+.landing a{display: inline-block;      border-radius: 12px;
+           color: #fff;                padding: 10px 15px;
+           border: 1px solid #fff;     margin-right: 15px;     
+	       transition: var(--transition);           margin-top: 15px;
+           font-size: 18px;}
+
+.landing a:hover{background: var(--main-color);   color: #000;
+	             border-color: var(--main-color)}
+
+/*---- js ----*/
+
+.Sing{position: fixed;   left: 0;         top: 0;
+      background: rgba(0,0,0,.9);         z-index: 10;
+      height: 100%;      width: 100%;     display: none}
+
+.Sing span{position: absolute;   top: 0;     right: 10px;
+           font-size: 40px;      cursor: pointer;
+           color: #fff;          z-index: 100}
+
+.Sing form{position: absolute;   top: 50%;      left: 50%;
+           transform: translate(-50% , -50%);   width: 450px;
+           border: 1px solid #00baff;           border-radius: 6px;}
+
+.Sing form h2{color: #fff;       font-weight: bold;
+              font-size: 40px;   text-align: center;
+              margin: 20px;}
+
+
+.Sing form input[type="text"],
+.Sing form input[type="password"]{width: 300px;        height: 50px;
+                                  margin-bottom: 20px;
+	                              margin-left: 80px;
+                                  border: 1px solid #00baff;
+	                              border-radius: 12px;
+                                  padding: 10px}
+
+.Sing form input[type="checkbox"]{margin: 20px 0 30px 80px;}
+
+.Sing form input[type="checkbox"]::after{content: 'Remember me';   left: 130px;
+                                         color: #fff;       position: absolute;
+                                         line-height: 1;    font-size: 18px;}
+
+.Sing form button{padding: 10px 30px;      border: 1px solid #00baff;
+                  border-radius: 12px;     color: #fff;
+                  font-size: 18px;         margin: 25px 160px;
+                  transition: var(--transition); background: var(--main-color)}
+
+.Sing form button:hover{background: linear-gradient(45deg, #fff, var(--main-color));    border-color: var(--main-color); color: #000}
+
+@media (max-width: 767px){
+	.Sing form{width: 300px;}
+	
+	.Sing form input[type="text"],
+    .Sing form input[type="password"]{width: 250px;   margin-bottom: 20px;
+                                      margin-left: 20px;}
+	
+	.Sing form input[type="checkbox"]{margin: 20px 0 20px 30px;}
+	.Sing form input[type="checkbox"]::after{left: 70px;}	
+	.Sing form button{padding: 10px 30px;   margin: 25px 85px;}}
+
+
+/*------------------------------- Service --------------------------------*/
+
+.service{padding-top: var(--padings);      padding-bottom: var(--padings);
+         background-color: #f6f6f6;        text-align: center;}
+
+.service .cont .boxs{display: flex;    flex-wrap: wrap;   gap: 30px;
+                     justify-content: space-around;      align-items: center;}
+
+.service .boxs .feat{padding-top: 30px;   text-align: center;  width: 300px}
+
+.service .boxs .feat i{color: var(--main-color);  font-size: 40px}
+
+.service .boxs .feat h3{font-weight: bold;    margin: 40px 0;}
+
+.service .boxs .feat p{line-height:2;         color:#777;
+	                   font-weight:normal;    font-size:18px;}
+
+/*------------------------------ Show Price ----------------------------*/
+
+.Prices{padding-top: var(--padings);   padding-bottom: var(--padings);
+        text-align: center;            background-color: #fff;}
+
+.Prices .cont .boxs{display: flex;     justify-content: space-around;
+                    flex-wrap: wrap;   align-items: center;     gap: 30px}
+
+.Prices .boxs .cart{background-color: var(--main-color);
+                    padding: 30px 20px;       border-radius: 12px;
+                    position: relative;       width: 300px;
+                    overflow: hidden;         margin-top: 40px;
+                    box-shadow: 0 0 20px #00000052;  
+	                max-height: 450px;        height: 100%}
+
+.Prices .boxs .cart h2{padding-bottom: 25px}
+
+.Prices .boxs .cart p{line-height: 2;        margin-top: 25px;
+	                  font-weight: normal;   font-size: 16px;}
+
+.Prices .boxs .peices{margin-bottom: 25px; margin-top: 25px; font-size: 40px;} 
+
+.Prices .boxs .peices span{display: block;   font-size: 14px;}
+
+.Prices .boxs .cart a{color: #2c3e50;      border: 1px solid #21536a;
+                      display: block;      padding: 10px 0;
+                      margin: 10px 0;      transition: var(--transition);
+                      font-size: 25px;     font-weight: bold;
+                      border-radius: 26px;}
+
+.Prices .boxs .cart a:hover{background: #21536a; color: #fff; cursor: pointer}
+
+.Prices .boxs .cart .pop{background-color: #2c3e50;       color: #fff;
+                         transform: rotate(45deg);        padding: 10px 50px;
+                         position: absolute;  top: 10px;  right: -35px;}
+
+/*---- js ----*/
+
+.Prices .vs{position: fixed;   left: 0;       top: 0;
+            background: rgba(0,0,0,.9);       z-index: 10;
+            height: 100%;      width: 100%;   display: none}
+
+.Prices .vs .x{position: absolute;   top: 0;     right: 10px;
+               font-size: 40px;      cursor: pointer;
+               color: #fff;          z-index: 100}
+
+.Prices .vs form{position: absolute;   top: 50%;      left: 50%;
+                 transform: translate(-50% , -50%);   width: 450px;
+                 border-radius: 6px;}
+
+.Prices .vs form .inputBox{margin-top: 20px;}
+
+.Prices .vs form .inputBox span{display: block;        color:#fff;
+                                padding-bottom: 10px;   font-size: 20px;}
+
+.Prices .vs form .inputBox input,
+.Prices .vs form .inputBox select{
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,.3);
+    color: #444;}
+
+.Prices .vs form .flexbox{display: flex;    gap: 15px;}
+
+.Prices .vs form .flexbox .inputBox{flex:1 1 150px;}
+
+.Prices .vs form .btn{width: 100%;           background: var(--main-color);
+                      margin-top: 20px;      padding: 10px;
+                      font-size: 20px;       color:#fff;
+                      border-radius: 10px;   letter-spacing: 2px;
+                      cursor: pointer;       border: 1px solid #00baff;
+                      transition: var(--transition) linear;}
+
+.Prices .vs form .btn:hover{background: linear-gradient(45deg, #fff, var(--main-color));}
+
+@media (max-width: 768px){.Prices .vs form{width: 90%;}
+    .Prices .vs form .inputBox span{font-size: 16px;}}
+
+/*-------------------------- photo --------------------------*/
+
+.photo{padding-top: var(--padings);    padding-bottom: var(--padings);
+       background-color: #f6f6f6}
+
+.photo .boxs{display: flex;     justify-content: space-around;
+             flex-wrap: wrap;   align-items: center;     gap: 10px}
+
+.photo .boxs .box{border-radius: 6px;  position: relative;
+	              width: 300px;        overflow: hidden;
+                  margin-top: 40px; }
+
+.photo .boxs .box:hover .caption{bottom: 0;   cursor: pointer;}
+
+.photo .boxs .box:hover img{transform: rotate(3deg) scale(1.1);
+	                        cursor: pointer;}
+
+.photo .boxs .box img{max-width: 100%;   transition: var(--transition);}
+
+.photo .boxs .box .caption{position: absolute;    left: 0;
+                           width: 100%;           padding: 20px;
+                           background: #fff;      bottom: -100%;
+                           transition: var(--transition);}
+
+.photo .boxs .box .caption h4{font-weight: normal;   margin-bottom: 10px;}
+
+.photo .boxs .box .caption p{color: var(--main-color);  font-weight: normal;}
+
+/*---- js ----*/
+
+.photo .show{position: fixed;   left: 0;       top: 0;
+             background: rgba(0,0,0,.9);       z-index: 10;
+             height: 100%;      width: 100%;   display: none;}
+
+.photo .show span{position: absolute;   top: 0;     right: 10px;
+                  font-size: 40px;      cursor: pointer;
+                  color: #fff;          z-index: 100}
+
+.photo .show span{transform: rotate(360deg);}
+
+.photo .show img{position: absolute;   top: 50%;      left: 50%;
+                 transform: translate(-50% , -50%);   width: 750px;
+                 border: 2px solid #00baff;           border-radius: 6px;
+                 object-fit: cover;}
+
+@media (max-width: 768px){.photo .show img{width: 90%;}}
+
+/*-------------------------- Conact --------------------------*/
+
+.Conact{padding-top: var(--padings);   padding-bottom: var(--padings);}
+
+.Conact .info{text-align: center; margin-top: 40px}
+
+.Conact .info .label{font-size: 35px;         font-weight: 800;
+                     letter-spacing: -2px;    margin-bottom: 15px;}
+
+.Conact .info .link{display: block;       font-size: 35px;
+                    font-weight: 800;     color: var(--main-color);
+                    transition: var(--transition);}
+
+.Conact .info .link:hover{color: #21536a;}
+
+.Conact .info .social{display: flex;      justify-content: center;
+                      margin-top: 20px;   font-size: 16px;}
+
+.Conact .info .social a{height: 60px;  width: 60px;  line-height: 60px;
+                        font-size: 30px;             border-radius: 50%;
+                        border: 1px solid #000;      color: var(--main-color);
+                        margin-right: 20px;          text-align: center;
+                        transition: var(--transition)}
+
+.Conact .info .social a:hover{transform: rotate(360deg);}
+
+.Conact .info .social .fa-facebook-f:hover{background: #f2f2f2; color: #1877F2}
+
+.Conact .info .social .fa-youtube:hover{background: #f2f2f2;  color: #E4405F}
+
+.Conact .info .social .fa-instagram:hover{background: #f2f2f2;  color: #E4405F}
+
+@media (max-width: 767px){.contact .info .label,
+                          .Conact .info .link {font-size: 20px;}}
+
+/*-------------------------- footer --------------------------*/
+
+.footer{background-color: #001f2a;   color: #fff;   font-size: 20px;
+	    padding: 30px 10px;          text-align: center;}
+
+.footer span{font-weight: bold;   color: var(--main-color);}
+
